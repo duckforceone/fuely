@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" href="./logo.png">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ 	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<link href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
+	<title>Fuely 2.0</title>
+
+		<style>
+		/* For avoiding title truncation in wp8 */
+		.ui-header .ui-title {
+				overflow: visible !important;
+		}
+		/* For fixing the absolute position issue for the default cordova gen page*/
+		#cjp-accordion1 .app {
+				left: 5px !important;
+				margin: 5px !important;
+				position: relative !important;
+		}
+		</style>
+		<style>
+		/* For avoiding title truncation in wp8 */
+		.ui-header .ui-title {
+				overflow: visible !important;
+		}
+		/* For fixing the absolute position issue for the default cordova gen page*/
+		#cjp-accordion1 .app {
+				left: 5px !important;
+				margin: 5px !important;
+				position: relative !important;
+		}
+		</style>
+</head>
+<body>
+
+<style type="text/css">
+
+  @import url('https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Exo:200i&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Oxygen&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Ubuntu:700&display=swap');
+
+body {
+
+	background-color: #966484;
+}
+
+
+
+
+
+    #reloadbtn {
+    	font-size: 40px;
+    	border: none;
+    	background-color: #fc9cd9;
+    	border-radius: 25%;
+    	float: left;
+
+    }
+
+    #flbtn {
+      font-size: 40px;
+      border: none;
+      background-color: #4f9dbc;
+      border-radius: 15%;
+      float: left;
+      margin-right: 10px;
+      margin-bottom: 15px;
+
+    }
+
+    .price {
+    	font-size: 40px;
+font-family: 'Ubuntu Condensed', sans-serif;
+    }
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      border-radius: 75px 25px;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+      border-radius: 55px 25px;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nigward {
+
+  font-size: 30px;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.squigga {
+
+  font-size: 40px;
+  font-family: 'Ubuntu', bold italic;
+}
+
+#mvTriviaNShit {
+
+  font-family: 'Exo', sans-serif;
+}
+
+</style>
+
+
+<button id="reloadbtn" type="button" onclick="reee()">Neu Laden!</button>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<b></b>
+<center><div id="infobox" class="alert alert-info"><strong id="first"></strong><strong><p id="header"></p></strong><p id="description"></p></div></center>
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="head">
+      <span class="close">&#xD7;</span>
+      <h2 id="mvName" class="squigga"></h2>
+    </div>
+    <div class="yEEt">
+    	<p id="mvStreamLink"></p>
+      <p id="mvDesc1" class="nigward"></p>
+      <p id="mvDesc2" class="nigward"></p>
+      <p id="mvDesc3" class="nigward"></p>
+    </div>
+    <div class="head">
+      <h3 id="mvTriviaNShit"></h3>
+    </div>
+  </div>
+
+</div>
+
+
+
+<div id="nearest_cont"></div>
+
+
+<script>
+
+	$(document).bind("deviceready", function(){
+			alert("Loaded!")
+	});
+
+
+
+		function reee() {
+
+			$(".stupidbutton").remove();
+
+
+			navigator.geolocation.getCurrentPosition(function(location) {
+  var lat = location.coords.latitude;
+  var long = location.coords.longitude;
+
+			var disturl = "https://creativecommons.tankerkoenig.de/json/list.php?lat="+lat+"&lng="+long+"&rad=3&sort=price&type=e5&apikey=0acb8f5c-3294-5cee-f000-ed4d460c8747";
+
+			$.getJSON(disturl, function(data) {
+
+				var DiffTank;
+
+				$.each(data.stations, function(i, enigga) {
+
+					 var epicid = JSON.stringify(enigga.id);
+
+						DiffTank += ('<button class=\"stupidbutton\" id=\"flbtn\" onclick=\'modalbois('+epicid+')\'><p>'+enigga.brand+'</p></button>');
+
+
+					});
+						$('#nearest_cont').append(DiffTank).html();
+
+			});
+		});
+		};
+
+
+
+function modalbois(niggaplease) {
+
+	var nigga = niggaplease;
+	var detailapi = 'https://creativecommons.tankerkoenig.de/json/detail.php?id='+nigga+'&apikey=0acb8f5c-3294-5cee-f000-ed4d460c8747';
+  var modal = document.getElementById("myModal");
+
+
+  var btn = document.getElementById("myBtn");
+
+
+  var span = document.getElementsByClassName("close")[0];
+
+  $.getJSON(detailapi, function(deet) {
+
+
+   $('#mvName').html(deet.station.brand);
+    $('#mvDesc').html();
+     $('#mvDesc1').html("Diesel: "+deet.station.diesel);
+     $('#mvDesc2').html("Super: "+deet.station.e5);
+     $('#mvDesc3').html("E10: "+deet.station.e10);
+      $('#mvTriviaNShit').html(deet.station.street+"\n"+deet.station.houseNumber);
+         modal.style.display = "block";
+
+});
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+
+}
+
+
+</script>
+
+
+
+</body>
+</html>
