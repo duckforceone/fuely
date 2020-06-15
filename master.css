@@ -28,14 +28,21 @@
 
 /* Add some padding inside the card container */
 .canvas {
-  padding: 2px 16px;
+    padding: 2px 16px;
+    padding: 16px;
+        padding-top: 16px;
+    padding-top: 60px;
 }
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #6200ee;
+.navbarr {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+        padding-left: 0px;
+    overflow: hidden;
+    background-color: #6200ee;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 li {
