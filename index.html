@@ -13,7 +13,7 @@
     <title>fuely.io</title>
   </head>
   <body>
-    <ul>
+    <ul class="navbarr">
   <li><a data-target="slide-out" class="sidenav-trigger"><span class="material-icons">menu</span></a></li>
   <li><a>fuely</a></li>
 </ul>
@@ -22,18 +22,58 @@
         </div>
         <div class="canvas">
           <ul class="collapsible">
-
           </ul>
         </div>
-        <div class="details"></div>
+
   </body>
   <ul id="slide-out" class="sidenav">
 
     <li><a href="#!"><i class="material-icons">local_gas_station</i>fuely.app</a></li>
-    <li><a href="#!">V3.0 Beta</a></li>
+    <li><button data-target="changelog" class="btn modal-trigger">V1.1 Beta</button></li>
     <li><div class="divider"></div></li>
     <li><a class="subheader">made by ducc1#1999</a></li>
-    <li><a class="waves-effect" href="#!">Github</a></li>
-    <li><a class="waves-effect" href="#!">Support</a></li>
+    <li><a class="waves-effect" href="https://github.com/duckforceone/fuely" target="_blank">Github</a></li>
+    <li><a class="waves-effect" href="https://github.com/duckforceone/fuely/issues" target="_blank">Support</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Used Libraries</a></li>
+    <li><a class="waves-effect" href="https://creativecommons.tankerkoenig.de/" target="_blank">Tankerkönig API</a></li>
+    <li><a class="waves-effect" href="https://material.io" target="_blank">material.io Icons</a></li>
+    <li><a class="waves-effect" href="https://materializecss.com/" target="_blank">materialize.css</a></li>
+    <li><a class="waves-effect" href="https://jquery.com/" target="_blank">jQuery</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader"><button data-target="modal1" class="btn modal-trigger" id="license">Lizenz</button></a></li>
   </ul>
+
+  <div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Lizenzinformationen</h4>
+    <p>
+
+    fuely.app
+    Copyright (C) 2020  ducc1
+
+    Dieses Programm ist freie Software. Sie können es unter den Bedingungen der GNU General Public License, wie von der Free Software Foundation veröffentlicht, weitergeben und/oder modifizieren, entweder gemäß Version 3 der Lizenz oder (nach Ihrer Option) jeder späteren Version.
+
+    Die Veröffentlichung dieses Programms erfolgt in der Hoffnung, daß es Ihnen von Nutzen sein wird, aber OHNE IRGENDEINE GARANTIE, sogar ohne die implizite Garantie der MARKTREIFE oder der VERWENDBARKEIT FÜR EINEN BESTIMMTEN ZWECK. Details finden Sie in der GNU General Public License.
+
+    Sie sollten ein Exemplar der GNU General Public License zusammen mit diesem Programm erhalten haben. Falls nicht, siehe http://www.gnu.org/licenses/.
+</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Akzeptieren</a>
+  </div>
+</div>
+
+<div id="changelog" class="modal">
+<div class="modal-content">
+  <h4>Changelog</h4>
+  <p>V1.1</p>
+  <p>- Kartenansicht hinzugefügt</p>
+  <p>Initial Release</p>
+  <p></p>
+</div>
+<div class="modal-footer">
+  <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+</div>
+</div>
 </html>
